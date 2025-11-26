@@ -48,7 +48,7 @@ function simulateCarbon(runtime, memory, loc, cloud) {
         runtime,
         memory,
         loc,
-        cloud,       // Include cloud in output
+        cloud,      
         energy,
         carbon,
         rating,
