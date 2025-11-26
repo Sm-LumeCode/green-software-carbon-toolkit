@@ -7,11 +7,12 @@ app.use(express.json());
 
 // Import your routes
 const scoreRoutes = require("./routes/scoreRoutes");
-app.use("/carbon", scoreRoutes);
+app.use("/api/score", scoreRoutes); 
 
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
 
 

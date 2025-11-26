@@ -1,7 +1,14 @@
-function simulateCarbon(runtime, memory, loc) {
+function simulateCarbon(runtime, memory, loc, cloud) {
     // Simple formulae
     const energy = (runtime * memory * 0.001) + (loc * 0.0001);
-    const carbon = energy * 0.5; // cloud factor
+
+    // Adjust carbon factor based on cloud provider
+    let cloudFactor = 0.5; // default
+    if (cloud === "AWS") cloudFactor = 0.5;
+    else if (cloud === "Azure") cloudFactor = 0.55;
+    else if (cloud === "GCP") cloudFactor = 0.52;
+
+    const carbon = energy * cloudFactor;
 
     // Simple rating
     let rating;
@@ -41,6 +48,7 @@ function simulateCarbon(runtime, memory, loc) {
         runtime,
         memory,
         loc,
+        cloud,       // Include cloud in output
         energy,
         carbon,
         rating,
