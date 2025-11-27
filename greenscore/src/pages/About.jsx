@@ -1,48 +1,102 @@
-import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import FallingLeaves from "../components/FallingLeaves";
+import "../styles/about.css";
 
-function About() {
-  const navigate = useNavigate();
+const taglines = [
+  "Software leaves a footprint. We make it visible.",
+  "Software consumes energy. Greenscore reveals it.",
+  "Software shapes the climate. Code it responsibly.",
+  "Performance is power. Measure it.",
+];
+
+export default function About() {
+  const [taglineIndex, setTaglineIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTaglineIndex((i) => (i + 1) % taglines.length);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div
-      style={{
-        position: "relative",
-        padding: "80px 20px",
-        textAlign: "center",
-        color: "#22543D"
-      }}
-    >
-      {/* Back Button */}
-      <button
-        onClick={() => navigate("/")}
-        style={{
-          position: "absolute",
-          top: "10px",
-          left: "10px",
-          backgroundColor: "#2F855A",
-          color: "white",
-          border: "none",
-          padding: "8px 14px",
-          borderRadius: "6px",
-          cursor: "pointer",
-          fontWeight: "bold"
-        }}
+    <div className="about">
+      <FallingLeaves />
+
+      {/* HERO */}
+      <motion.section
+        className="hero"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
       >
-        ← Back
-      </button>
+        <h1>Greenscore</h1>
 
-      <h2>About This Project</h2>
+        {/* MORPHING TAGLINE */}
+        <motion.h2
+          key={taglineIndex}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.6 }}
+        >
+          {taglines[taglineIndex]}
+        </motion.h2>
+      </motion.section>
 
-      <p style={{ marginTop: "20px", maxWidth: "700px", margin: "auto" }}>
-        This Phase-1 prototype simulates the scoring flow, UI, and dashboard layout 
-        for a green software carbon-efficiency toolkit. The current version serves 
-        as a demonstration of how inputs, score display, and visual components will 
-        behave. Phase-2 will expand this into a fully functional carbon-measurement 
-        system using runtime metrics, cloud energy factors, and industry-accepted 
-        sustainability models.
-      </p>
+      {/* CONTENT SECTIONS */}
+      <Section title="Why Greenscore Exists">
+        Applications are scaling faster than responsibility.
+        Servers expand. Clouds multiply. Memory grows silently.
+        Yet carbon never appears in a terminal.
+        <br /><br />
+        Greenscore makes that hidden cost visible.
+      </Section>
+
+      <Section title="What It Really Does">
+        It transforms runtime behavior into environmental signals.
+        It compresses complex performance data into one clean efficiency grade.
+        And it reveals where your software wastes power — clearly and instantly.
+      </Section>
+
+      <Section title="Who It's For">
+        Engineers. Students. Architects. Researchers.
+        Anyone who writes code and cares about its real-world cost.
+      </Section>
+
+      <Section title="The Experience">
+        You enter a few numbers.
+        The system responds with a footprint.
+        <br /><br />
+        No lectures. Just feedback.
+        Like debugging — for the planet.
+      </Section>
+
+      <motion.footer
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        Greenscore • Climate-aware software begins here.
+      </motion.footer>
     </div>
   );
 }
 
-export default About;
+function Section({ title, children }) {
+  return (
+    <motion.section
+      className="block"
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <h3>{title}</h3>
+      <p>{children}</p>
+    </motion.section>
+  );
+}
+

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+.about {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(180deg, #ecfdf5, #d1fae5);
+  background-size: 400% 400%;
+  animation: breathe 14s ease-in-out infinite;
+  color: #064e3b;
+  min-height: 100vh;
+  padding-bottom: 60px;
+  overflow-x: hidden;
+}
+
+@keyframes breathe {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* HERO */
+.hero {
+  padding-top: 90px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3.6rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  letter-spacing: -1px;
+  color: #047857;
+}
+
+.hero h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* CONTENT */
+.block {
+  max-width: 760px;
+  margin: 70px auto;
+  text-align: center;
+}
+
+.block h3 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  color: #047857;
+}
+
+.block p {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* FOOTER */
+footer {
+  opacity: 0.6;
+  text-align: center;
+  margin-top: 80px;
+}
+
+/* FALLING ELEMENTS */
+.leaves {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.leaf {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle, #34d399, #059669);
+  border-radius: 0 100% 0 100%;
+  opacity: 0.6;
+}
+
+/* FLOWERS */
+.flower {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle, #f472b6, #fb7185);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(244, 114, 182, 0.6);
+}
