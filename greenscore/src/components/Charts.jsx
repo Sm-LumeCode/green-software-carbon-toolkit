@@ -10,19 +10,19 @@ function Charts({ scoreData }) {
       gap: "24px",
       width: "100%"
     }}>
+      {/* Environmental Impact Card */}
       <div style={{
-        backgroundColor: "rgba(232, 245, 233, 0.3)",
-        backdropFilter: "blur(5px)",
+        backgroundColor: "transparent",
         padding: "24px",
         borderRadius: "12px",
-        border: "2px solid rgba(47, 133, 90, 0.5)"
+        border: "3px solid #4caf50"
       }}>
         <h3 style={{
-          color: "#ffffff",
+          color: "#0a2818",
           fontSize: "1.3rem",
           marginBottom: "16px",
-          fontWeight: "700",
-          textShadow: "2px 2px 6px rgba(0, 0, 0, 0.9)"
+          fontWeight: "800",
+          textShadow: "2px 2px 6px rgba(255, 255, 255, 1)"
         }}>
           🌍 Environmental Impact
         </h3>
@@ -33,36 +33,36 @@ function Charts({ scoreData }) {
         }}>
           <div>
             <p style={{ 
-              color: "#a5d6a7", 
-              fontWeight: "700", 
+              color: "#1b5e20", 
+              fontWeight: "800", 
               fontSize: "0.9rem",
-              textShadow: "1px 1px 3px rgba(0, 0, 0, 0.8)"
+              textShadow: "2px 2px 4px rgba(255, 255, 255, 1)"
             }}>
               Carbon Footprint
             </p>
             <p style={{ 
-              color: "#ffffff", 
+              color: "#0a2818", 
               fontSize: "1.5rem", 
-              fontWeight: "800",
-              textShadow: "2px 2px 6px rgba(0, 0, 0, 0.9)"
+              fontWeight: "900",
+              textShadow: "2px 2px 6px rgba(255, 255, 255, 1)"
             }}>
               {scoreData ? scoreData.carbon.toFixed(2) : "--"} kg CO₂
             </p>
           </div>
           <div>
             <p style={{ 
-              color: "#a5d6a7", 
-              fontWeight: "700", 
+              color: "#1b5e20", 
+              fontWeight: "800", 
               fontSize: "0.9rem",
-              textShadow: "1px 1px 3px rgba(0, 0, 0, 0.8)"
+              textShadow: "2px 2px 4px rgba(255, 255, 255, 1)"
             }}>
               Equivalent to
             </p>
             <p style={{ 
-              color: "#ffffff", 
+              color: "#0a2818", 
               fontSize: "1rem", 
-              fontWeight: "600",
-              textShadow: "1px 1px 3px rgba(0, 0, 0, 0.8)"
+              fontWeight: "700",
+              textShadow: "2px 2px 4px rgba(255, 255, 255, 1)"
             }}>
               {scoreData ? treesNeeded : "--"} tree(s) needed for offset
             </p>
@@ -70,19 +70,19 @@ function Charts({ scoreData }) {
         </div>
       </div>
 
+      {/* Energy Consumption Card */}
       <div style={{
-        backgroundColor: "rgba(255, 243, 224, 0.3)",
-        backdropFilter: "blur(5px)",
+        backgroundColor: "transparent",
         padding: "24px",
         borderRadius: "12px",
-        border: "2px solid rgba(255, 152, 0, 0.5)"
+        border: "3px solid #ff9800"
       }}>
         <h3 style={{
-          color: "#ffffff",
+          color: "#0a2818",
           fontSize: "1.3rem",
           marginBottom: "16px",
-          fontWeight: "700",
-          textShadow: "2px 2px 6px rgba(0, 0, 0, 0.9)"
+          fontWeight: "800",
+          textShadow: "2px 2px 6px rgba(255, 255, 255, 1)"
         }}>
           ⚡ Energy Consumption
         </h3>
@@ -93,36 +93,36 @@ function Charts({ scoreData }) {
         }}>
           <div>
             <p style={{ 
-              color: "#ffcc80", 
-              fontWeight: "700", 
+              color: "#e65100", 
+              fontWeight: "800", 
               fontSize: "0.9rem",
-              textShadow: "1px 1px 3px rgba(0, 0, 0, 0.8)"
+              textShadow: "2px 2px 4px rgba(255, 255, 255, 1)"
             }}>
               Total Energy Used
             </p>
             <p style={{ 
-              color: "#ffffff", 
+              color: "#0a2818", 
               fontSize: "1.5rem", 
-              fontWeight: "800",
-              textShadow: "2px 2px 6px rgba(0, 0, 0, 0.9)"
+              fontWeight: "900",
+              textShadow: "2px 2px 6px rgba(255, 255, 255, 1)"
             }}>
               {scoreData ? energyKwh : "--"} kWh
             </p>
           </div>
           <div>
             <p style={{ 
-              color: "#ffcc80", 
-              fontWeight: "700", 
+              color: "#e65100", 
+              fontWeight: "800", 
               fontSize: "0.9rem",
-              textShadow: "1px 1px 3px rgba(0, 0, 0, 0.8)"
+              textShadow: "2px 2px 4px rgba(255, 255, 255, 1)"
             }}>
               Peak Power Draw
             </p>
             <p style={{ 
-              color: "#ffffff", 
+              color: "#0a2818", 
               fontSize: "1rem", 
-              fontWeight: "600",
-              textShadow: "1px 1px 3px rgba(0, 0, 0, 0.8)"
+              fontWeight: "700",
+              textShadow: "2px 2px 4px rgba(255, 255, 255, 1)"
             }}>
               {scoreData ? peakPower : "--"} watts
             </p>
@@ -130,19 +130,19 @@ function Charts({ scoreData }) {
         </div>
       </div>
 
+      {/* Optimization Tips Card */}
       <div style={{
-        backgroundColor: "rgba(227, 242, 253, 0.3)",
-        backdropFilter: "blur(5px)",
+        backgroundColor: "transparent",
         padding: "24px",
         borderRadius: "12px",
-        border: "2px solid rgba(33, 150, 243, 0.5)"
+        border: "3px solid #2196f3"
       }}>
         <h3 style={{
-          color: "#ffffff",
+          color: "#0a2818",
           fontSize: "1.3rem",
           marginBottom: "16px",
-          fontWeight: "700",
-          textShadow: "2px 2px 6px rgba(0, 0, 0, 0.9)"
+          fontWeight: "800",
+          textShadow: "2px 2px 6px rgba(255, 255, 255, 1)"
         }}>
           💡 Quick Tips
         </h3>
@@ -154,16 +154,36 @@ function Charts({ scoreData }) {
           flexDirection: "column",
           gap: "8px"
         }}>
-          <li style={{ color: "#ffffff", fontSize: "0.95rem", fontWeight: "600", textShadow: "1px 1px 3px rgba(0, 0, 0, 0.8)" }}>
+          <li style={{ 
+            color: "#0a2818", 
+            fontSize: "0.95rem", 
+            fontWeight: "700",
+            textShadow: "2px 2px 4px rgba(255, 255, 255, 1)"
+          }}>
             ✓ Optimize runtime efficiency
           </li>
-          <li style={{ color: "#ffffff", fontSize: "0.95rem", fontWeight: "600", textShadow: "1px 1px 3px rgba(0, 0, 0, 0.8)" }}>
+          <li style={{ 
+            color: "#0a2818", 
+            fontSize: "0.95rem", 
+            fontWeight: "700",
+            textShadow: "2px 2px 4px rgba(255, 255, 255, 1)"
+          }}>
             ✓ Reduce memory allocation
           </li>
-          <li style={{ color: "#ffffff", fontSize: "0.95rem", fontWeight: "600", textShadow: "1px 1px 3px rgba(0, 0, 0, 0.8)" }}>
+          <li style={{ 
+            color: "#0a2818", 
+            fontSize: "0.95rem", 
+            fontWeight: "700",
+            textShadow: "2px 2px 4px rgba(255, 255, 255, 1)"
+          }}>
             ✓ Use green cloud regions
           </li>
-          <li style={{ color: "#ffffff", fontSize: "0.95rem", fontWeight: "600", textShadow: "1px 1px 3px rgba(0, 0, 0, 0.8)" }}>
+          <li style={{ 
+            color: "#0a2818", 
+            fontSize: "0.95rem", 
+            fontWeight: "700",
+            textShadow: "2px 2px 4px rgba(255, 255, 255, 1)"
+          }}>
             ✓ Cache frequently used data
           </li>
         </ul>

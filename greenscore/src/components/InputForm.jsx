@@ -35,13 +35,12 @@ function InputForm({ onScoreGenerated }) {
       });
 
       const data = await res.json();
-console.log("Score Result:", data);
+      console.log("Score Result:", data);
 
-// Pass data to parent component to update ScoreOutput
-if (onScoreGenerated) {
-  onScoreGenerated(data);
-}
-// ✅ No alert - data will show automatically in ScoreOutput
+      // Pass data to parent component to update ScoreOutput
+      if (onScoreGenerated) {
+        onScoreGenerated(data);
+      }
     } catch (error) {
       console.error("Error generating score:", error);
       alert("Failed to generate score. Make sure the server is running.");
@@ -52,6 +51,19 @@ if (onScoreGenerated) {
 
   return (
     <div>
+      <style>
+        {`
+          input::placeholder {
+            color: #000000ff !important;
+            opacity: 0.8;
+          }
+          select option {
+            color: #0a2818;
+            background-color: white;
+          }
+        `}
+      </style>
+
       <h3 style={{
         color: "#ffffff",
         fontSize: "1.5rem",
@@ -78,7 +90,7 @@ if (onScoreGenerated) {
             transition: "all 0.3s ease",
             backgroundColor: "rgba(255, 255, 255, 0.2)",
             backdropFilter: "blur(5px)",
-            color: "#ffffff",
+            color: "#0a2818",
             fontWeight: "600"
           }}
           type="number"
@@ -106,7 +118,7 @@ if (onScoreGenerated) {
             transition: "all 0.3s ease",
             backgroundColor: "rgba(255, 255, 255, 0.2)",
             backdropFilter: "blur(5px)",
-            color: "#ffffff",
+            color: "#0a2818",
             fontWeight: "600"
           }}
           type="number"
@@ -134,7 +146,7 @@ if (onScoreGenerated) {
             transition: "all 0.3s ease",
             backgroundColor: "rgba(255, 255, 255, 0.2)",
             backdropFilter: "blur(5px)",
-            color: "#ffffff",
+            color: "#0a2818",
             fontWeight: "600"
           }}
           type="number"
@@ -163,7 +175,7 @@ if (onScoreGenerated) {
             backdropFilter: "blur(5px)",
             cursor: "pointer",
             transition: "all 0.3s ease",
-            color: "#ffffff",
+            color: "#0a2818",
             fontWeight: "600"
           }}
           name="cloud"

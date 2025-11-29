@@ -137,11 +137,10 @@ function Score() {
         }}>
           <div style={{
             backgroundColor: "rgba(255, 255, 255, 0.25)",
-            backdropFilter: "blur(12px)",
             borderRadius: "16px",
             padding: "clamp(20px, 4vw, 32px)",
             boxShadow: "0 8px 30px rgba(0, 0, 0, 0.3)",
-            border: "2px solid rgba(255, 255, 255, 0.4)",
+            border: "2px solid rgba(0, 0, 0, 1)",
             minHeight: "300px"
           }}>
             <InputForm onScoreGenerated={handleScoreGenerated} />
@@ -149,11 +148,10 @@ function Score() {
 
           <div style={{
             backgroundColor: "rgba(255, 255, 255, 0.25)",
-            backdropFilter: "blur(12px)",
             borderRadius: "16px",
             padding: "clamp(20px, 4vw, 32px)",
             boxShadow: "0 8px 30px rgba(0, 0, 0, 0.3)",
-            border: "2px solid rgba(255, 255, 255, 0.4)",
+            border: "2px solid rgba(0, 0, 0, 1)",
             minHeight: "300px"
           }}>
             <ScoreOutput scoreData={scoreData} />
@@ -162,11 +160,10 @@ function Score() {
 
         <div style={{
           backgroundColor: "rgba(255, 255, 255, 0.25)",
-          backdropFilter: "blur(12px)",
           borderRadius: "16px",
           padding: "clamp(24px, 5vw, 40px)",
           boxShadow: "0 8px 30px rgba(0, 0, 0, 0.3)",
-          border: "2px solid rgba(255, 255, 255, 0.4)",
+          border: "2px solid rgba(0, 0, 0, 1)",
           minHeight: "400px",
           marginBottom: "40px"
         }}>
