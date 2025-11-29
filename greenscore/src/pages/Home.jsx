@@ -151,34 +151,34 @@ function Home() {
           </button>
 
           <button
-            onClick={() => navigate("/about")}
-            style={{
-              backgroundColor: "rgba(255, 255, 255, 0.2)",
-              color: "#ffffff",
-              border: "3px solid #ffffff",
-              padding: "16px 36px",
-              fontSize: "1.15rem",
-              borderRadius: "12px",
-              cursor: "pointer",
-              fontWeight: "800",
-              boxShadow: "0 8px 30px rgba(0, 0, 0, 0.3)",
-              transition: "all 0.3s ease",
-              backdropFilter: "blur(10px)",
-              letterSpacing: "0.5px"
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.transform = "translateY(-3px)";
-              e.target.style.boxShadow = "0 12px 35px rgba(0, 0, 0, 0.4)";
-              e.target.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = "translateY(0)";
-              e.target.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.3)";
-              e.target.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
-            }}
-          >
-            About Us
-          </button>
+          onClick={() => navigate("/about")}
+          style={{
+            marginLeft: "15px",
+            backgroundColor: "#ffffff",
+            color: "#0a2818",
+            border: "3px solid #ffffff",
+            padding: "16px 36px",
+            fontSize: "1.15rem",
+            borderRadius: "12px",
+            cursor: "pointer",
+            fontWeight: "800",
+            boxShadow: "0 8px 30px rgba(0, 0, 0, 0.4)",
+            transition: "all 0.3s ease",
+            letterSpacing: "0.5px"
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = "translateY(-3px)";
+            e.target.style.boxShadow = "0 12px 35px rgba(0, 0, 0, 0.5)";
+            e.target.style.backgroundColor = "#e8f5e9";
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = "translateY(0)";
+            e.target.style.boxShadow = "0 8px 30px rgba(0, 0, 0, 0.4)";
+            e.target.style.backgroundColor = "#ffffff";
+          }}
+        >
+          About Us
+        </button>
         </div>
 
         <div style={{
