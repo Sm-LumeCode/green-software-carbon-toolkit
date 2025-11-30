@@ -78,6 +78,40 @@ function About() {
         `}
       </style>
 
+      {/* Back Button - Top Left */}
+      <button
+        onClick={() => navigate("/")}
+        style={{
+          position: "fixed",
+          top: "20px",
+          left: "20px",
+          backgroundColor: "#ffffff",
+          color: "#0a2818",
+          border: "3px solid #ffffff",
+          padding: "12px 24px",
+          borderRadius: "10px",
+          cursor: "pointer",
+          fontWeight: "800",
+          fontSize: "1rem",
+          boxShadow: "0 6px 20px rgba(0, 0, 0, 0.4)",
+          transition: "all 0.3s ease",
+          zIndex: 1000,
+          letterSpacing: "0.5px"
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.backgroundColor = "#e8f5e9";
+          e.target.style.transform = "translateY(-2px)";
+          e.target.style.boxShadow = "0 8px 25px rgba(0, 0, 0, 0.5)";
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.backgroundColor = "#ffffff";
+          e.target.style.transform = "translateY(0)";
+          e.target.style.boxShadow = "0 6px 20px rgba(0, 0, 0, 0.4)";
+        }}
+      >
+        ← Back
+      </button>
+
       <div
         style={{
           position: "relative",
@@ -135,6 +169,7 @@ function About() {
             fontWeight: "700",
             marginBottom: "55px",
             letterSpacing: "0.5px",
+            textShadow: "2px 2px 8px rgba(0, 0, 0, 0.9)",
           }}
         >
           Turn performance metrics into climate-aware decisions.
@@ -228,13 +263,6 @@ Like debugging — for the planet.`,
             • ML-based impact prediction  
           </p>
         </GlowCard>
-
-        <button
-          onClick={() => navigate("/")}
-          style={buttonStyle}
-        >
-          ← Back to Home
-        </button>
       </div>
 
       <div
@@ -305,8 +333,8 @@ const cardText = {
 };
 
 const ghostCardStyle = {
-  backgroundColor: "rgba(255, 0, 0, 0.12)",
-  border: "2px solid rgba(255, 80, 80, 0.9)",
+  backgroundColor: "rgba(255, 60, 60, 0.25)",
+  border: "3px solid #ff4444",
   padding: "26px 30px",
   borderRadius: "18px",
   color: "#ffffff",
@@ -317,37 +345,45 @@ const ghostCardStyle = {
 const ghostTitle = {
   fontWeight: "900",
   marginBottom: "12px",
-  color: "#ff6b6b",
+  color: "#ffffff",
+  fontSize: "1.3rem",
+  textShadow: "3px 3px 10px rgba(0, 0, 0, 0.9)",
 };
 
-const ghostList = { listStyle: "none", padding: 0, lineHeight: "1.8" };
+const ghostList = { 
+  listStyle: "none", 
+  padding: 0, 
+  lineHeight: "1.8",
+  color: "#ffffff",
+  fontWeight: "700",
+  textShadow: "2px 2px 8px rgba(0, 0, 0, 0.9)",
+};
 
 const activeCardStyle = {
-  backgroundColor: "rgba(76, 175, 80, 0.25)",
-  border: "2px solid rgba(76, 175, 80, 0.8)",
+  backgroundColor: "rgba(76, 175, 80, 0.35)",
+  border: "3px solid #4caf50",
   padding: "26px 30px",
   borderRadius: "18px",
   color: "#fff",
   minWidth: "260px",
-  boxShadow: "0 0 25px rgba(76, 175, 80, 0.8)",
+  boxShadow: "0 0 28px rgba(76, 175, 80, 0.9)",
 };
 
-const activeTitle = { fontWeight: "900", marginBottom: "12px" };
-const activeList = { listStyle: "none", padding: 0, lineHeight: "1.8" };
+const activeTitle = { 
+  fontWeight: "900", 
+  marginBottom: "12px",
+  color: "#ffffff",
+  fontSize: "1.3rem",
+  textShadow: "3px 3px 10px rgba(0, 0, 0, 0.9)",
+};
 
-const buttonStyle = {
-  marginTop: "20px",
-  backgroundColor: "#ffffff",
-  color: "#0a2818",
-  border: "3px solid #ffffff",
-  padding: "16px 36px",
-  fontSize: "1.15rem",
-  borderRadius: "12px",
-  cursor: "pointer",
-  fontWeight: "800",
-  boxShadow: "0 8px 30px rgba(0, 0, 0, 0.4)",
-  transition: "all 0.3s ease",
-  letterSpacing: "0.5px",
+const activeList = { 
+  listStyle: "none", 
+  padding: 0, 
+  lineHeight: "1.8",
+  color: "#ffffff",
+  fontWeight: "700",
+  textShadow: "2px 2px 8px rgba(0, 0, 0, 0.9)",
 };
 
 export default About;
