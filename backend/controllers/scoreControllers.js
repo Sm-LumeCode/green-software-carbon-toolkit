@@ -1,60 +1,74 @@
+function normalize(value, max) {
+    return Math.min(100, Math.round((value / max) * 100));
+}
+
 function simulateCarbon(runtime, memory, loc, cloud) {
-    // Simple formulae
-    const energy = (runtime * memory * 0.001) + (loc * 0.0001);
 
-    // Adjust carbon factor based on cloud provider
-    let cloudFactor = 0.5; // default
-    if (cloud === "AWS") cloudFactor = 0.5;
-    else if (cloud === "Azure") cloudFactor = 0.55;
-    else if (cloud === "GCP") cloudFactor = 0.52;
+    
+    // Measure
+    const runtimeScore = normalize(runtime, 300);
+    const memoryScore = normalize(memory, 800);
+    const cpuScore = normalize(loc, 1500);
 
-    const carbon = energy * cloudFactor;
+    let cloudScore = 50;
+    if (cloud === "AWS") cloudScore = 60;
+    else if (cloud === "Azure") cloudScore = 45;
+    else if (cloud === "GCP") cloudScore = 30;
 
-    // Simple rating
-    let rating;
-    if (carbon < 10) {
-        rating = "A";
-    } else if (carbon > 10 && carbon < 20) {
-        rating = "B";
-    } else if (carbon > 20 && carbon < 35) {
-        rating = "C";
-    } else {
-        rating = "D";
+    // Contributers
+    const contributors = {
+        cpu: cpuScore,
+        memory: memoryScore,
+        runtime: runtimeScore,
+        cloud: cloudScore
+    };
+
+    // Weighted score
+    const carbonScore = Math.round(
+        cpuScore * 0.25 +
+        memoryScore * 0.25 +
+        runtimeScore * 0.35 +
+        cloudScore * 0.15
+    );
+
+    // Grade
+    let grade = "A";
+    if (carbonScore > 40) grade = "B";
+    if (carbonScore > 60) grade = "C";
+    if (carbonScore > 80) grade = "D";
+
+    
+    // Suggestions
+    const suggestions = [];
+
+    if (runtimeScore > 60) {
+        suggestions.push("Use caching, batching and reduce repeated API calls");
     }
 
-    // Conditional suggestions
-    let suggestions = [];
-    if (rating === "C" || rating === "D") {
-        if (runtime * memory * 0.001 > 10) {
-            suggestions.push("Optimize loops to reduce runtime");
-        }
-        if (memory > 500) {
-            suggestions.push("Reduce memory usage");
-        }
-        if (loc > 1000) {
-            suggestions.push("Remove unused code to reduce load");
-        }
-
-        if (suggestions.length === 0) {
-            suggestions.push("Review your code for efficiency improvements.");
-        }
-
-        suggestions = suggestions.join(" and ");
-    } else {
-        suggestions = "Your code is efficient!";
+    if (memoryScore > 60) {
+        suggestions.push("Stream data instead of loading full datasets into memory");
     }
 
+    if (cpuScore > 60) {
+        suggestions.push("Refactor large functions and remove duplicate logic");
+    }
+
+    if (cloudScore > 50) {
+        suggestions.push("Deploy on a low-carbon cloud region like GCP or Azure");
+    }
+
+    if (suggestions.length === 0) {
+        suggestions.push("Your software design is efficient. Keep it up!");
+    }
+
+    // Outputs
     return {
-        runtime,
-        memory,
-        loc,
-        cloud,      
-        energy,
-        carbon,
-        rating,
+        carbonScore,
+        grade,
+        contributors,
         suggestions
     };
 }
 
-// Export so routes can use it
 module.exports = { simulateCarbon };
+
