@@ -255,6 +255,27 @@ Like debugging — for the planet.`,
         ))}
 
         <GlowCard>
+          <h2 style={cardTitle}>How Project Size Is Interpreted</h2>
+          <div style={cardText}>
+            <ul style={{ margin: 0, paddingLeft: "20px" }}>
+              <li><strong>Small:</strong> personal or student projects, limited features, low traffic</li>
+              <li><strong>Medium:</strong> full-stack college projects, moderate traffic, APIs and UI</li>
+              <li><strong>Large:</strong> real-world or production-scale applications with heavy computation or users</li>
+            </ul>
+          </div>
+        </GlowCard>
+
+        <GlowCard>
+          <h2 style={cardTitle}>Why we use benchmarks instead of direct measurement</h2>
+          <div style={cardText}>
+            <ul style={{ margin: 0, paddingLeft: "20px" }}>
+              <li><strong>Privacy-friendly:</strong> No device spying or data collection</li>
+              <li><strong>Academically accepted:</strong> Estimation method based on industry standards</li>
+            </ul>
+          </div>
+        </GlowCard>
+
+        <GlowCard>
           <h2 style={cardTitle}>Future Direction</h2>
           <p style={cardText}>
             • Live cloud carbon APIs  
