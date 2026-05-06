@@ -59,9 +59,9 @@ Green Software Carbon Toolkit is a state-of-the-art, web-based platform designed
 Applications are scaling faster than responsibility. Servers expand, clouds multiply, and memory grows silently—yet carbon metrics rarely appear in a terminal. Greenscore makes this hidden cost visible, allowing developers to make informed decisions that balance performance with sustainability.
 ---
 AUTHORS
-- **Surabhi M
-- **Elina Somnath
-- **Umeka Ranjith
-- **Veeksha V Shetty
+- Surabhi M
+- Elina Somnath
+- Umeka Ranjith
+- Veeksha V Shetty
 ---
 *Disclaimer: Carbon estimations are based on industry-standard benchmarks and regional intensity factors. For precise environmental audits, please consult with certified sustainability experts.*
